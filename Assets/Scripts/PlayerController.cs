@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -11,6 +12,8 @@ public class PlayerController : MonoBehaviour
     float speed = 5;
     [SerializeField] float xRange = 8;
     [SerializeField] float yRange = 4;
+
+    [SerializeField] GameObject[] guns;
 
     [Header("Position-related")]
     [SerializeField]
@@ -34,6 +37,25 @@ public class PlayerController : MonoBehaviour
         {
             Position();
             Rotation();
+            Firing();
+        }
+    }
+
+    private void Firing()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire1"))
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(true);
+            }
+        }
+        else
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(false);
+            }
         }
     }
 
