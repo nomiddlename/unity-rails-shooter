@@ -7,17 +7,21 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
+    [SerializeField] int scorePerHit = 10;
+
+    ScoreBoard scoreBoard;
 
     // Use this for initialization
     void Start()
     {
+        scoreBoard = FindObjectOfType<ScoreBoard>();
         AddNonTriggerBoxCollider();
     }
 
     private void AddNonTriggerBoxCollider()
     {
-        BoxCollider collider = gameObject.AddComponent<BoxCollider>();
-        collider.isTrigger = false;
+        BoxCollider boxCollider = gameObject.AddComponent<BoxCollider>();
+        boxCollider.isTrigger = false;
     }
 
     // Update is called once per frame
@@ -30,6 +34,7 @@ public class Enemy : MonoBehaviour
     {
         GameObject explosion = Instantiate(deathFX, gameObject.transform.position, Quaternion.identity);
         explosion.transform.parent = parent;
+        scoreBoard.ScoreHit(scorePerHit);
         Destroy(gameObject);
     }
 }
