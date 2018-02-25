@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 198549109645048966}
   - component: {fileID: 199798599080156664}
   - component: {fileID: 82217851989451726}
+  - component: {fileID: 114896095023859690}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1222449551279886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 24, z: -30}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -122,6 +123,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114896095023859690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222449551279886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2cf8f44a49e948edac0567dcd11b877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198549109645048966
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1086,15 +1098,15 @@ ParticleSystem:
         serializedVersion: 2
         key0: {r: 0.9646897, g: 1, b: 0.74399996, a: 1}
         key1: {r: 0.61764705, g: 0.0045415265, b: 0.0045415265, a: 0.6784314}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key2: {r: 0.2352941, g: 0.02076125, b: 0.02076125, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 42212
+        ctime2: 57632
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -1109,7 +1121,7 @@ ParticleSystem:
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 2
+        m_NumColorKeys: 3
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2

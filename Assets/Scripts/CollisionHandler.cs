@@ -19,7 +19,6 @@ public class CollisionHandler : MonoBehaviour
     {
         SendMessage("PlayerDeath");
         deathFX.SetActive(true);
-
         Invoke("LoadNextScene", loadDelay);
     }
 
